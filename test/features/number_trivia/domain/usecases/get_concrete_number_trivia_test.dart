@@ -18,7 +18,7 @@ void main() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
     usecase = GetConcreteNumberTrivia(mockNumberTriviaRepository);
     tNumber = 1;
-    tNumberTrivia = const NumberTrivia(number: '1', text: 'test');
+    tNumberTrivia = const NumberTrivia(number: 1, text: 'test');
   });
 
   test('Should get trivia for the number from the repositories', () async {
