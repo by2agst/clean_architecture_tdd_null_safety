@@ -13,32 +13,49 @@ void main() {
   });
 
   group('fromJson', () {
-    test('Should return a valid model when the JSON number is an integer', () async {
-      final Map<String, dynamic> jsonMap = json.decode(fixture('trivia'));
+    test(
+      'Should return a valid model when the JSON number is an integer',
+      () async {
+        // Arrange
+        final Map<String, dynamic> jsonMap = json.decode(fixture('trivia'));
 
-      final result = NumberTriviaModel.fromJson(jsonMap);
+        // Act
+        final result = NumberTriviaModel.fromJson(jsonMap);
 
-      expect(result, equals(tNumberTriviaModel));
-    });
-    test('Should return a valid model when the JSON number is regarded as a double', () async {
-      final Map<String, dynamic> jsonMap = json.decode(fixture('trivia_double'));
+        // Assert
+        expect(result, equals(tNumberTriviaModel));
+      },
+    );
 
-      final result = NumberTriviaModel.fromJson(jsonMap);
+    test(
+      'Should return a valid model when the JSON number is regarded as a double',
+      () async {
+        // Arrange
+        final Map<String, dynamic> jsonMap =
+            json.decode(fixture('trivia_double'));
 
-      expect(result, equals(tNumberTriviaModel));
-    });
+        // Act
+        final result = NumberTriviaModel.fromJson(jsonMap);
+
+        // Assert
+        expect(result, equals(tNumberTriviaModel));
+      },
+    );
   });
 
   group('toJson', () {
-    test('Should return a JSON map containing the proper data', () async {
-      final result = tNumberTriviaModel.toJson();
+    test(
+      'Should return a JSON map containing the proper data',
+      () async {
+        final result = tNumberTriviaModel.toJson();
 
-      final expectedMap = {
-        "text": "Test text",
-        "number": 1,
-      };
+        final expectedMap = {
+          "text": "Test text",
+          "number": 1,
+        };
 
-      expect(result, expectedMap);
-    });
+        expect(result, expectedMap);
+      },
+    );
   });
 }
