@@ -1,6 +1,6 @@
-# clean_architecture
+# clean_architecture_tdd
 
-A new Flutter project.
+number trivia - clean architecture (null safety)
 
 ## Getting Started
 
